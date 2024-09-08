@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+:root{
+    --Dark-Blue-intro-and-email-sign-up-background: hsl(217, 28%, 15%);
+    --Dark-Blue-main-background: hsl(218, 28%, 13%);
+    --Dark-Blue-footer-background: hsl(216, 53%, 9%);
+    --Dark-Blue-testimonials-background: hsl(219, 30%, 18%);
+    --Cyan-inside-call-to-action-gradient: hsl(176, 68%, 64%);
+    --Blue-inside-call-to-action-gradient: hsl(198, 60%, 50%);
+    --Light-Red-error: hsl(0, 100%, 63%);
+    --White: hsl(0, 0%, 100%);
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1440px;
+    min-height: 100vh;
+    margin-inline: auto;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--Dark-Blue-intro-and-email-sign-up-background);
+}
+
+.arow{
+    color: var(--Cyan-inside-call-to-action-gradient);
+}
+
+main{
+    background-color: var(--Dark-Blue-main-background);
+    position: relative;
+    margin-top: 0rem;
+}
+
+.bg{
+    position: absolute;
+    top: -25rem;
+    right: 0;
+    text-align: center;
+    z-index: -1;
+}
+
+.lilbg{
+    display: none;
+}
+
+/* Nav css */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 2rem;
+    padding: 2rem 3rem;
+    align-items: center;
+}
+
+.navUl{
+    display: flex;
+    gap: 3rem;
+}
+
+.navLi{
+    list-style-type: none;
+}
+
+.navLi a{
+    text-decoration: none;
+    color: var(--White);
+    font-weight: 700;
+    position: relative;
+    opacity: 70%;
+    transition: opacity 0.3s;
+}
+
+.navLi a:hover{
+    opacity: 1;
+}
+
+.navLi a::before{
+    content: '';
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    background-color: var(--White);
+    bottom: -1px;
+    border-radius: 40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.navLi a:hover::before{
+    content: '';
+    position: absolute;
+    height: 1.3px;
+    width: 100%;
+    background-color: var(--White);
+    bottom: -1px;
+    border-radius: 40px;
+    opacity: 1;
+}
+
+/* Intro css */
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.intro h1{
+    color: var(--White);
+    max-width: 30rem;
+    text-align: center;
+}
+
+.intro p{
+    color: var(--White);
+    opacity: 90%;
+    max-width: 26rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Features css */
+
+.features{
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    padding-top: 7rem;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.box h2{
+    color: var(--White);
+}
+
+.box p{
+    color: var(--White);
+    opacity: 90%;
+    max-width: 23rem;
+    font-weight: 400;
+}
+
+/* ImgInfo css */
+
+.lil-cont{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 7rem auto;
+    gap: 1rem;
+    align-items: center;
+}
+
+.lil-cont img{
+    position: relative;
+    right: -3rem;
+}
+
+.lil-cont .info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    margin-left: 4rem;
+}
+
+.lil-cont h1{
+    color: var(--White);
+    max-width: 21rem;
+    font-size: 2.2rem;
+}
+
+.lil-cont .info p{
+    color: var(--White);
+    opacity: 90%;
+    font-weight: 400;
+    max-width: 30rem;
+}
+
+.lil-cont .info .buttonLike{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    max-width: fit-content;
+    color: var(--Cyan-inside-call-to-action-gradient);
+    cursor: pointer;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--Cyan-inside-call-to-action-gradient);
+    transition: all .3s;
+}
+
+.arow{
+    transition: all .3s;
+}
+
+.lil-cont .info .buttonLike:hover{
+    color: var(--White);
+    border-bottom: 1px solid var(--White);
+}
+
+.buttonLike:hover .arow {
+    color: white; /* رنگ آیکون در هاور */
+}
+
+/* Comments css */
+
+.commentCont{
+    display: flex;
+    margin-inline: auto;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 6rem 0rem;
+}
+
+.coment{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
+    background-color: var(--Dark-Blue-testimonials-background);
+    border-radius: 5px;
+    position: relative;
+}
+
+.coment .profile{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.coment p{
+    color: var(--White);
+    opacity: 90%;
+    font-weight: 400;
+    max-width: 18rem;
+    line-height: 1.3rem;
+}
+
+.coment img{
+    border-radius: 50%;
+    height: 2.5rem;
+}
+
+.coment .virgol{
+    border-radius: 0;
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    z-index:-1 ;
+}
+
+.commentCont{
+    z-index: 1;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.name h5{
+    color: var(--White);
+}
+
+.name h6{
+    color: var(--White);
+    opacity: 70%;
+    font-weight: 400;
+}
+
+/* Email css */
+
+.emailCont{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--Dark-Blue-intro-and-email-sign-up-background);
+    width: fit-content;
+    text-align: center;
+    margin-inline: auto;
+    gap: 1rem;
+    padding: 2rem 7rem;
+    border-radius: 5px;
+    position: relative;
+    bottom: -6rem;
+}
+
+.emailCont h1{
+    color: var(--White);
+}
+
+.emailCont p{
+    color: var(--White);
+    opacity: 90%;
+    max-width: 38rem;
+}
+
+.inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 1.2rem;
+}
+
+.inputs span{
+    position: absolute;
+    bottom: -1.4rem;
+    left: 1.5rem;
+    color: var(--Light-Red-error);
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.inputs input{
+    width: 80%;
+    place-items: center;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+::placeholder{
+    opacity: 50%;
+}
+
+.inputs .btnForEmail{
+    cursor: pointer;
+    border: none;
+    color: var(--White);
+    background: linear-gradient(to right ,hsl(176, 68%, 64%),hsl(198, 60%, 50%));
+    font-weight: 700;
+    padding: 0.8rem 0rem;
+    width: 12rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.inputs .btnForEmail:hover{
+    opacity: 70%;
+}
+
+/* Footer css */
+
+.footerCont{
+    background-color: var(--Dark-Blue-footer-background);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 4rem 3rem;
+    padding-top: 10rem;
+    gap: 1rem;
+}
+
+.fot{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fot li{
+    list-style-type: none;
+}
+
+.fot li a{
+    color: var(--White);
+    font-weight: 700;
+    opacity: 60%;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.fot ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fot li a:hover{
+    opacity: 1;
+}
+
+.box1{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.box1 p{
+    color: var(--White);
+    opacity: 90%;
+    max-width: 20rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.box2 ul li{
+    display: flex;
+    gap: 1rem;
+    color: var(--White);
+    opacity: 90%;
+    font-size:1rem ;
+}
+
+.box5{
+    display: flex;
+    gap: 1rem;
+}
+
+.box5 span a{
+    padding: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s;
+}
+
+.box5 span a:hover{
+    color: var(--Cyan-inside-call-to-action-gradient);
+    outline: 1px solid var(--Blue-inside-call-to-action-gradient);
+}
+
+/* Button css */
+
+.btn{
+    cursor: pointer;
+    border: none;
+    color: var(--White);
+    background: linear-gradient(to right ,hsl(176, 68%, 64%),hsl(198, 60%, 50%));
+    font-weight: 700;
+    padding: 0.8rem 0rem;
+    width: 12rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.btn a{
+    color: var(--White);
+}
+
+.btn:hover{
+    opacity: 70%;
+}
+
+/* responsive */
+
+@media (max-width: 1140px) {
+    nav{
+        margin-inline: 0rem;
+    }
+    header{
+        margin: 0rem 1rem;
+    }
+    main{
+        padding:0rem 1rem ;
+    }
+    .lil-cont img{
+        height: 400px;
+        right: 0rem;
+    }
+
+    .commentCont{
+        flex-direction: column;
+        margin: 0rem 1rem;
+    }
+
+    .coment{
+        width: 100%;
+    }
+
+    .coment p{
+        max-width: fit-content;
+    }
+    .bg{
+        right: -15rem;
+    }
+    .lil-cont{
+        grid-template-columns: repeat(1,1fr);
+        place-items: center;
+        gap: 2rem;
+    }
+    .lil-cont p{
+        max-width: fit-content;
+    }
+    .footerCont{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .footerCont .fot{
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .box5{
+        justify-content: center;
+    }
+}
+
+
+
+@media (max-width:910px) {
+    .features{
+        grid-template-columns: repeat(1,1fr);
+    }
+    nav{
+        padding: 2rem ;
+    }
+}
+
+@media (max-width:735px) {
+    .intro img{
+        height: 20rem;
+    }
+    .intro h1{
+        max-width: fit-content;
+    }
+    .intro p{
+        max-width: fit-content;
+    }
+    nav img{
+        height: 1.3rem;
+    }
+    .navUl{
+        gap: 1.5rem;
+    }
+    nav a{
+        font-size: 0.8rem;
+    }
+    .bg{
+        right: -25rem;
+    }
+    .lil-cont img{
+        height: 15rem;
+        right: -1rem;
+    }
+    .lil-cont h1{
+        max-width: fit-content;
+    }
+    .lil-cont p{
+        max-width: fit-content;
+    }
+    .commentCont{
+        padding: 3rem 0rem;
+    }
+    .emailCont{
+        padding: 2rem;
+    }
+    .inputs{
+        flex-direction: column;
+    }
+    .emailCont h1{
+        width: 100%;
+        font-size: 1.3rem;
+    }
+    .emailCont p{
+        max-width: fit-content;
+        font-size: 0.8rem;
+    }
+    .inputs input{
+        width: 100%;
+    }
+    .inputs .btnForEmail{
+        width: 100%;
+    }
+    .inputs span{
+        width: 100%;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+}
+
+@media (max-width:450px) {
+    .bg{
+        display: none;
+    }
+    .lilbg{
+        display: inline-block;
+        position: absolute;
+        top: -9rem;
+        z-index: -1;
+        scale: 2;
+    }
+    nav{
+        padding: 2rem 0rem;
+    }
+} 
